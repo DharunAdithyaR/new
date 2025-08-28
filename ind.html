@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>India — Info with Flag Background</title>
+  <style>
+    /* Full-page flag background: saffron / white / green horizontal bands */
+    html,body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    body {
+      /* three equal horizontal bands */
+      background: linear-gradient(
+        to bottom,
+        #FF9933 0% 33.333%,
+        #FFFFFF 33.333% 66.666%,
+        #138808 66.666% 100%
+      );
+      position: relative;
+      color: #012a4a; /* dark blue-ish text for contrast on white */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+
+    /* Ashoka Chakra (SVG) centered behind the content */
+    .chakra {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 360px;
+      height: 360px;
+      opacity: 0.18; /* subtle behind content */
+      pointer-events: none;
+    }
+
+    /* Info card */
+    .card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 860px;
+      width: 100%;
+      padding: 28px;
+      z-index: 2;
+      backdrop-filter: blur(3px);
+    }
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 2rem;
+      color: #0b3d91;
+    }
+
+    p.lead {
+      margin: 0 0 18px 0;
+      color: #333;
+      font-size: 1.05rem;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .fact {
+      background: rgba(11,61,145,0.05);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 0.95rem;
+      color: #06306f;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #444;
+    }
+
+    @media (max-width: 520px) {
+      .chakra { width: 220px; height: 220px; opacity: 0.12; }
+      .card { padding: 18px; }
+      h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Ashoka Chakra (24 spokes) as SVG centered behind the content -->
+  <svg class="chakra" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <!-- outer and inner circles -->
+    <circle cx="100" cy="100" r="62" stroke="#000080" stroke-width="4" fill="none"/>
+    <circle cx="100" cy="100" r="14" stroke="#000080" stroke-width="4" fill="none"/>
+    <!-- 24 spokes: lines rotated about center -->
+    <!-- each line goes from radius ~64 to 74 (visual spoke) -->
+    <!-- We'll create 24 identical lines rotated by 15° increments -->
+    <g stroke="#000080" stroke-width="2" stroke-linecap="round">
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(0 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(15 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(30 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(45 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(60 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(75 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(90 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(105 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(120 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(135 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(150 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(165 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(180 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(195 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(210 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(225 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(240 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(255 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(270 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(285 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(300 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(315 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(330 100 100)"/>
+      <line x1="100" y1="36" x2="100" y2="20" transform="rotate(345 100 100)"/>
+    </g>
+    <!-- thin circle ring to mimic chakra rim -->
+    <circle cx="100" cy="100" r="70" stroke="#000080" stroke-width="2" fill="none" opacity="0.9"/>
+  </svg>
+
+  <div class="card" role="main" aria-labelledby="title">
+    <h1 id="title">India — Republic of India</h1>
+    <p class="lead">
+      India is a large South Asian country known for its diverse cultures, languages, landscapes, and history.
+      This page uses a stylized Indian flag as the background (saffron, white, green) with the Ashoka Chakra in blue.
+    </p>
+
+    <div class="facts" aria-label="Key facts about India">
+      <div class="fact"><strong>Capital:</strong> New Delhi</div>
+      <div class="fact"><strong>Largest Cities:</strong> Mumbai, Delhi, Bengaluru, Kolkata, Chennai</div>
+      <div class="fact"><strong>Official Languages:</strong> Hindi & English (plus many regional languages)</div>
+      <div class="fact"><strong>Government:</strong> Federal parliamentary democratic republic</div>
+      <div class="fact"><strong>Currency:</strong> Indian Rupee (INR)</div>
+      <div class="fact"><strong>Highlights:</strong> Rich cultural heritage, varied cuisine, major IT & film industries</div>
+    </div>
+
+    <footer>
+      Tip: Edit the card text below the title to add more details (history, geography, travel notes, etc.).<br>
+      (This page is a simple single-file demo that replicates the flag colors and the Ashoka Chakra using SVG.)
+    </footer>
+  </div>
+</body>
+</html>
