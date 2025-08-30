@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+
+files:
+  - source: /
+    destination: /home/ubuntu/app
+
+hooks:
+  BeforeInstall:
+    - location: scripts/clean_docker.sh
+      timeout: 180
+      runas: root
+
+  ApplicationStart:
+    - location: scripts/start_docker.sh
+      timeout: 300
+      runas: root
+
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 300
+      runas: root
